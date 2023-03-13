@@ -20,22 +20,22 @@ app.use(express.json());
 // This middleware allows other website to fetch data, make requests
 app.use(cors());
 
-// const db = mysql2.createConnection({
-    //     host: "containers-us-west-152.railway.app",
-    //     port: 6881,
-    //     user: "root",
-//     password: `${process.env.PASSWORD}`,
-//     database: "railway",
-//     multipleStatements: true
-// })
-
 export const db = mysql2.createConnection({
-    host: "localhost",
+    host: "containers-us-west-152.railway.app",
+    port: 6881,
     user: "root",
-    password: `${process.env.PASSWORD_SQL}`,
-    database: "test",
+    password: `${process.env.PASSWORD}`,
+    database: "railway",
     multipleStatements: true
 })
+
+// export const db = mysql2.createConnection({
+//     host: "localhost",
+//     user: "root",
+//     password: `${process.env.PASSWORD_SQL}`,
+//     database: "test",
+//     multipleStatements: true
+// })
 
 db.connect((err) => {
     if (err){
