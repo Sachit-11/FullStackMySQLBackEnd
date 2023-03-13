@@ -2,7 +2,7 @@ import express from "express";
 import mysql2 from "mysql2";
 import dotenv from "dotenv";
 import cors from "cors";
-import bookRoutes from "../backend/routes/bookRoutes.js";
+import bookRoutes from "./routes/bookRoutes.js";
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
