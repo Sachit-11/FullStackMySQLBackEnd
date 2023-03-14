@@ -63,7 +63,7 @@ app.get("/", (req, res) => {
 // Book Routes
 app.use("", bookRoutes);
 
-app.post("/books", (req, res) => {
+app.get("/books", (req, res) => {
     const q = "Select * from books";
     db.query(q, (err, data) => {
         if (err){
