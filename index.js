@@ -63,12 +63,21 @@ app.get("/", (req, res) => {
 // Book Routes
 app.use("", bookRoutes);
 
+app.post("/books", (req, res) => {
+    const q = "Select * from books";
+    db.query(q, (err, data) => {
+        if (err){
+            return res.json(err);
+        }
+        return res.json(data);
+    })
+})
+
 // User Routes
 
 // To check default server (on which it is currently running) we are using server.address()
 // app.listen() defines the port that acts as an interface bw actual server and frontend
 // process.env.PORT has some default value when hosting on sites like railway.app or heroku
-
 var server = app.listen(process.env.PORT, () => {
     console.log(server.address());
     console.log("Connected to backend!");

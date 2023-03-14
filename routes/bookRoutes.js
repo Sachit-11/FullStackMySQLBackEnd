@@ -4,7 +4,7 @@ import {getAllBooks, autoSuggestBy, getBookByID, getBooksByFilters, addBook, upd
 
 const router = express.Router();
 
-router.route("/books").get(getAllBooks);
+// router.route("/books").get(getAllBooks);
 
 router.route("/books/suggest/:by").get(autoSuggestBy);
 
