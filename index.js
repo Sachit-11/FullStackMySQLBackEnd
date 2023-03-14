@@ -60,9 +60,6 @@ app.get("/", (req, res) => {
     res.json("hello this is the backend")
 })
 
-// Book Routes
-app.use("", bookRoutes);
-
 app.get("/books", (req, res) => {
     const q = "Select * from books";
     db.query(q, (err, data) => {
@@ -72,6 +69,9 @@ app.get("/books", (req, res) => {
         return res.json(data);
     })
 })
+
+// Book Routes
+app.use("", bookRoutes);
 
 // User Routes
 
